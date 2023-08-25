@@ -12,6 +12,10 @@ def readb64(url):
     img = cv2.imdecode(nparr,cv2.IMREAD_GRAYSCALE)
     return img
 @app.get('/api/hog')
+def root():
+    return {"message": "This is my api"}
+
+
 async def read_str(request: Request):
     item = await request.json()
     item_str = item['img']
